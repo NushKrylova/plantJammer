@@ -1,0 +1,192 @@
+[
+  {
+    "name": "cheese",
+    "icon": {
+      "name": "cheese",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/66.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": 15,
+          "name": "tbsp"
+        },
+        {
+          "perPortion": 1,
+          "name": "grams"
+        },
+        {
+          "perPortion": 30,
+          "name": "slice"
+        }
+      ]
+    }
+  },
+  {
+    "name": "chili pepper",
+    "icon": {
+      "name": "chili_pepper",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/71.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": -1,
+          "name": "pieces"
+        }
+      ]
+    }
+  },
+  {
+    "name": "garlic",
+    "icon": {
+      "name": "garlic",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/124.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": 5,
+          "name": "Clove"
+        }
+      ]
+    }
+  },
+  {
+    "name": "canned tomato",
+    "icon": {
+      "name": "canned_tomato",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/180.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": 15,
+          "name": "tbsp"
+        },
+        {
+          "perPortion": 1,
+          "name": "ml"
+        }
+      ]
+    }
+  },
+  {
+    "name": "olive oil",
+    "icon": {
+      "name": "olive_oil",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/206.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": 5,
+          "name": "tsp"
+        },
+        {
+          "perPortion": 15,
+          "name": "tbsp"
+        },
+        {
+          "perPortion": 1,
+          "name": "ml"
+        }
+      ]
+    }
+  },
+  {
+    "name": "onion",
+    "icon": {
+      "name": "onion",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/208.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": -1,
+          "name": "pieces"
+        }
+      ]
+    }
+  },
+  {
+    "name": "pasta",
+    "icon": {
+      "name": "pasta",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/219.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": 1,
+          "name": "grams"
+        }
+      ]
+    }
+  },
+  {
+    "name": "salt",
+    "icon": {
+      "name": "salt",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/279.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": 1,
+          "name": "pinch"
+        },
+        {
+          "perPortion": 5,
+          "name": "tsp"
+        },
+        {
+          "perPortion": 15,
+          "name": "tbsp"
+        },
+        {
+          "perPortion": 1,
+          "name": "grams"
+        }
+      ]
+    }
+  },
+  {
+    "name": "smoked paprika",
+    "icon": {
+      "name": "smoked_paprika",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/287.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": 5,
+          "name": "tsp"
+        },
+        {
+          "perPortion": 15,
+          "name": "tbsp"
+        },
+        {
+          "perPortion": 1,
+          "name": "grams"
+        }
+      ]
+    }
+  },
+  {
+    "name": "tempeh",
+    "icon": {
+      "name": "tempeh",
+      "url": "https://pjstudio-backend-proto.s3-eu-central-1.amazonaws.com/icons/321.svg"
+    },
+    "measure": {
+      "units": [
+        {
+          "perPortion": 1,
+          "name": "grams"
+        }
+      ]
+    }
+  }
+]

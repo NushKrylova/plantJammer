@@ -1,0 +1,28 @@
+.contentWrapper {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  table-layout: auto;
+  min-width: 800px;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftColumn {
+  text-align: left;
+}
+
+.rightColumn {
+  text-align: right;
+}
+
+.icon {
+  width: 16px;
+}
