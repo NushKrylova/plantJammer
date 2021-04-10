@@ -18,7 +18,11 @@ export const Stepper: FunctionComponent<StepperProps> = ({
 }) => (
   <div className={styles.alignRight}>
     <div className={styles.container}>
-      <button className={styles.iconContainer} onClick={onClickDecrement}>
+      <button
+        className={styles.iconContainer}
+        onClick={onClickDecrement}
+        disabled={value <= 0}
+      >
         <img className={styles.icon} src={minusIcon} alt="minus" />
       </button>
       <div className={styles.text}>

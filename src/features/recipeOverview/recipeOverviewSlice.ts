@@ -89,7 +89,7 @@ const recipeOverviewSlice = createSlice({
       let ingredient = state.recipeIngredients.find(
         (ingredient) => ingredient.name === name
       );
-      if (ingredient) {
+      if (ingredient && ingredient.amount > 0) {
         ingredient.amount = ingredient.amount - step;
       }
     },
