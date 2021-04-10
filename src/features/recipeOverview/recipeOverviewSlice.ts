@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Recipe {
   name: string;
@@ -10,7 +10,7 @@ export interface Recipe {
 
 interface RecipeIngredients {
   name: string;
-  unit: string;
+  unit: Unit;
   amount: number;
 }
 
@@ -24,11 +24,25 @@ interface Ingredient {
     units: [
       {
         perPortion: number;
-        name: string;
+        name: Unit;
       }
     ];
   };
 }
+
+interface IngredientStep {
+  name: string;
+  step: number;
+}
+
+export type Unit =
+  | "ml"
+  | "grams"
+  | "tbsp"
+  | "tsp"
+  | "slice"
+  | "pieces"
+  | "Clove";
 
 export const fetchIngredients = createAsyncThunk(
   "recipeOverview/fetchIngredients",
@@ -61,21 +75,44 @@ const recipeOverviewSlice = createSlice({
   name: "recipeOverview",
   initialState,
   reducers: {
-    increment(state, action) {
-      const ingredientName = action.payload;
-
-      //state.ingredients[0].amount++;
+    increment(state, action: PayloadAction<IngredientStep>) {
+      const { name, step } = action.payload;
+      let ingredient = state.recipeIngredients.find(
+        (ingredient) => ingredient.name === name
+      );
+      if (ingredient) {
+        ingredient.amount = ingredient.amount + step;
+      }
     },
-    decrement(state) {
-     // state.ingredients[0].amount--;
+    decrement(state, action: PayloadAction<IngredientStep>) {
+      const { name, step } = action.payload;
+      let ingredient = state.recipeIngredients.find(
+        (ingredient) => ingredient.name === name
+      );
+      if (ingredient) {
+        ingredient.amount = ingredient.amount - step;
+      }
     },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchIngredients.fulfilled, (state, action) => {
-      state.allIngredients.push(...action.payload)
+      state.allIngredients.push(...action.payload);
     });
   },
 });
+
+export const formatUnits = (unit: Unit) => {
+  switch (unit) {
+    case "grams":
+      return "gr";
+    case "pieces":
+      return "pcs";
+    case "Clove":
+      return "clv";
+    default:
+      return unit;
+  }
+};
 
 export const { increment, decrement } = recipeOverviewSlice.actions;
 export default recipeOverviewSlice.reducer;

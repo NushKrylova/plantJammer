@@ -15,12 +15,8 @@ table {
   justify-content: space-between;
 }
 
-.leftColumn {
-  text-align: left;
-}
-
-.rightColumn {
-  text-align: right;
+.ingredient{
+  display: flex;
 }
 
 .icon {

@@ -1,0 +1,23 @@
+.alignRight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-width: 150px;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 16px;
+}
+
+.text {
+  padding: 5px;
+}

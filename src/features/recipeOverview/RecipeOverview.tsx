@@ -1,11 +1,17 @@
-import React, { useEffect } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import { useAppSelector } from "../../app/hooks";
 import { useDispatch } from "react-redux";
 
 import styles from "./RecipeOverview.module.css";
-import { fetchIngredients } from "./recipeOverviewSlice";
+import {
+  decrement,
+  fetchIngredients,
+  formatUnits,
+  increment,
+} from "./recipeOverviewSlice";
+import { Stepper } from "../../app/components/stepper/Stepper";
 
-export function RecipeOverview() {
+export const RecipeOverview: FunctionComponent = () => {
   const recipeName = useAppSelector((state) => state.recipeOverview.name);
   const people = useAppSelector((state) => state.recipeOverview.people);
   const time = useAppSelector((state) => state.recipeOverview.time);
@@ -26,12 +32,25 @@ export function RecipeOverview() {
 
   const items = ingredients.map((item) => (
     <tr key={item.name}>
-      <td className={styles.leftColumn}>
-        <img className={styles.icon} src={item.icon} alt={item.name} />
-        {item.name}
+      <td>
+        <div className={styles.ingredient}>
+          <div>
+            <img className={styles.icon} src={item.icon} alt={item.name} />
+          </div>
+          <div>{item.name}</div>
+        </div>
       </td>
-      <td className={styles.rightColumn}>
-        {item.amount} {item.unit}
+      <td>
+        <Stepper
+          value={item.amount}
+          unit={formatUnits(item.unit)}
+          onClickIncrement={() =>
+            dispatch(increment({ name: item.name, step: 1 }))
+          }
+          onClickDecrement={() =>
+            dispatch(decrement({ name: item.name, step: 1 }))
+          }
+        />
       </td>
     </tr>
   ));
@@ -55,4 +74,4 @@ export function RecipeOverview() {
       </table>
     </div>
   );
-}
+};
