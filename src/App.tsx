@@ -14,6 +14,7 @@ function App() {
         <ButtonNavigation
           onClickBack={() => {}}
           onClickNext={() => {}}
+          disabledBack={true}
         ></ButtonNavigation>
       </footer>
     </div>
