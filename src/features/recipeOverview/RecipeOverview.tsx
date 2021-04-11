@@ -8,6 +8,7 @@ import {
   fetchIngredients,
   formatUnits,
   increment,
+  toUpperCase,
 } from "./recipeOverviewSlice";
 import { Stepper } from "../../app/components/stepper/Stepper";
 
@@ -37,7 +38,7 @@ export const RecipeOverview: FunctionComponent = () => {
           <div>
             <img className={styles.icon} src={item.icon} alt={item.name} />
           </div>
-          <div>{item.name}</div>
+          <div>{toUpperCase(item.name)}</div>
         </div>
       </td>
       <td>

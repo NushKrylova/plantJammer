@@ -114,5 +114,6 @@ export const formatUnits = (unit: Unit) => {
   }
 };
 
+export const toUpperCase = (text: string) => text[0].toUpperCase() + text.substring(1);
 export const { increment, decrement } = recipeOverviewSlice.actions;
 export default recipeOverviewSlice.reducer;
