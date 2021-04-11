@@ -5,14 +5,14 @@ import plusIcon from "./plusIcon.svg";
 
 type StepperProps = {
   value: number;
-  unit: string;
+  valueFormat: (value: number) => string;
   onClickIncrement: () => void;
   onClickDecrement: () => void;
 };
 
 export const Stepper: FunctionComponent<StepperProps> = ({
   value,
-  unit,
+  valueFormat,
   onClickIncrement,
   onClickDecrement,
 }) => (
@@ -25,9 +25,7 @@ export const Stepper: FunctionComponent<StepperProps> = ({
       >
         <img className={styles.icon} src={minusIcon} alt="minus" />
       </button>
-      <div className={styles.text}>
-        {value} {unit}
-      </div>
+      <div className={styles.text}>{valueFormat(value)}</div>
       <button className={styles.iconContainer} onClick={onClickIncrement}>
         <img className={styles.icon} src={plusIcon} alt="plus" />
       </button>

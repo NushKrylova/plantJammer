@@ -4,10 +4,12 @@ import { useDispatch } from "react-redux";
 
 import styles from "./RecipeOverview.module.css";
 import {
-  decrement,
+  decrementIngredient,
+  decrementPeople,
   fetchIngredients,
   formatUnits,
-  increment,
+  incrementIngredient,
+  incrementPeople,
   toUpperCase,
 } from "./recipeOverviewSlice";
 import { Stepper } from "../../app/components/stepper/Stepper";
@@ -44,12 +46,12 @@ export const RecipeOverview: FunctionComponent = () => {
       <td>
         <Stepper
           value={item.amount}
-          unit={formatUnits(item.unit)}
+          valueFormat={() => `${item.amount} ${formatUnits(item.unit)}`}
           onClickIncrement={() =>
-            dispatch(increment({ name: item.name, step: 1 }))
+            dispatch(incrementIngredient({ name: item.name, step: 1 }))
           }
           onClickDecrement={() =>
-            dispatch(decrement({ name: item.name, step: 1 }))
+            dispatch(decrementIngredient({ name: item.name, step: 1 }))
           }
         />
       </td>
@@ -64,7 +66,12 @@ export const RecipeOverview: FunctionComponent = () => {
           <tr>
             <th colSpan={2}>
               <div className={styles.tableHeader}>
-                <div>people {people}</div>
+                <Stepper
+                  value={people}
+                  valueFormat={() => `People ${people}`}
+                  onClickIncrement={() => dispatch(incrementPeople())}
+                  onClickDecrement={() => dispatch(decrementPeople())}
+                />
                 <div>{time} min</div>
                 <div>Show in grams</div>
               </div>

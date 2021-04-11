@@ -75,7 +75,7 @@ const recipeOverviewSlice = createSlice({
   name: "recipeOverview",
   initialState,
   reducers: {
-    increment(state, action: PayloadAction<IngredientStep>) {
+    incrementIngredient(state, action: PayloadAction<IngredientStep>) {
       const { name, step } = action.payload;
       let ingredient = state.recipeIngredients.find(
         (ingredient) => ingredient.name === name
@@ -84,7 +84,8 @@ const recipeOverviewSlice = createSlice({
         ingredient.amount = ingredient.amount + step;
       }
     },
-    decrement(state, action: PayloadAction<IngredientStep>) {
+
+    decrementIngredient(state, action: PayloadAction<IngredientStep>) {
       const { name, step } = action.payload;
       let ingredient = state.recipeIngredients.find(
         (ingredient) => ingredient.name === name
@@ -92,6 +93,14 @@ const recipeOverviewSlice = createSlice({
       if (ingredient && ingredient.amount > 0) {
         ingredient.amount = ingredient.amount - step;
       }
+    },
+
+    incrementPeople(state) {
+      state.people++;
+    },
+
+    decrementPeople(state) {
+      state.people--;
     },
   },
   extraReducers: (builder) => {
@@ -114,6 +123,12 @@ export const formatUnits = (unit: Unit) => {
   }
 };
 
-export const toUpperCase = (text: string) => text[0].toUpperCase() + text.substring(1);
-export const { increment, decrement } = recipeOverviewSlice.actions;
+export const toUpperCase = (text: string) =>
+  text[0].toUpperCase() + text.substring(1);
+export const {
+  incrementIngredient,
+  decrementIngredient,
+  incrementPeople,
+  decrementPeople,
+} = recipeOverviewSlice.actions;
 export default recipeOverviewSlice.reducer;
