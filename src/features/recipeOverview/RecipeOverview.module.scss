@@ -7,6 +7,7 @@
   background-color: white;
   width: 100%;
   box-shadow: 0px 0px 4px 3px $grayShadow;
+  border-radius: 4px;
 }
 
 table {
@@ -15,23 +16,24 @@ table {
   border-collapse: collapse;
 }
 
-.tableHeader {
-  display: flex;
-  justify-content: space-between;
+.info {
+  min-width: 800px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
   border-top: 2px solid $gray;
   border-bottom: 2px solid $gray;
-  padding: 10px;
+
+  padding: 10px 0;
+  margin-bottom: 5px;
+
   font-size: 0.85em;
+  font-weight: 600;
 }
 
 td {
   padding: 5px 10px;
-}
-
-tbody:before {
-  content: "";
-  display: block;
-  height: 2px;
 }
 
 tbody tr:nth-child(2n) {
@@ -40,6 +42,15 @@ tbody tr:nth-child(2n) {
 
 .title {
   font-size: 1em;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
 }
 
 .ingredient {
@@ -59,8 +70,4 @@ tbody tr:nth-child(2n) {
   display: flex;
   align-items: center;
   padding-left: 8px;
-}
-
-.time {
-  display: flex;
 }

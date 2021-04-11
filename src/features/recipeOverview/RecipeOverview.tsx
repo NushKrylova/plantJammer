@@ -62,28 +62,24 @@ export const RecipeOverview: FunctionComponent = () => {
   return (
     <div className={styles.recipeOverview}>
       <h1 className={styles.title}>{recipeName.toUpperCase()}</h1>
+      <div className={styles.info}>
+        <div className={styles.displayFlex}>
+          <Stepper
+            value={people}
+            valueFormat={() => `People ${people}`}
+            onClickIncrement={() => dispatch(incrementPeople())}
+            onClickDecrement={() => dispatch(decrementPeople())}
+          />
+        </div>
+        <div className={styles.time}>
+          <div className={styles.iconContainer}>
+            <img className={styles.icon} src={clock} alt="clock" />
+          </div>
+          <div className={styles.label}>{time} min</div>
+        </div>
+        <div className={styles.label}></div>
+      </div>
       <table>
-        <thead>
-          <tr>
-            <th colSpan={2}>
-              <div className={styles.tableHeader}>
-                <Stepper
-                  value={people}
-                  valueFormat={() => `People ${people}`}
-                  onClickIncrement={() => dispatch(incrementPeople())}
-                  onClickDecrement={() => dispatch(decrementPeople())}
-                />
-                <div className={styles.time}>
-                  <div className={styles.iconContainer}>
-                    <img className={styles.icon} src={clock} alt="clock" />
-                  </div>
-                  <div className={styles.label}>{time} min</div>
-                </div>
-                <div className={styles.label}>Show in grams</div>
-              </div>
-            </th>
-          </tr>
-        </thead>
         <tbody>{items}</tbody>
       </table>
     </div>
