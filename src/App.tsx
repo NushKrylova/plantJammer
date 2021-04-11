@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <header>NavigationSteps</header>
+      <header>Here could be your NavigationSteps</header>
       <div className={styles.recipeOverviewContainer}>{getPage()}</div>
       <footer>
         <div className={styles.gradient}></div>
