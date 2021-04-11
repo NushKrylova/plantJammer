@@ -1,10 +1,11 @@
 import React from "react";
 import { RecipeOverview } from "./features/recipeOverview/RecipeOverview";
 import { ButtonNavigation } from "./app/components/buttonNavigation/ButtonNavigation";
-import styles from "./App.module.scss";
 import { previousPage, nextPage } from "./features/navigation/navigationSlice";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { EmptyPage } from "./app/components/emptyPage/EmptyPage";
+
+import styles from "./App.module.scss";
 
 function App() {
   const currentPageIndex = useAppSelector(
@@ -20,6 +21,7 @@ function App() {
       return <EmptyPage />;
     }
   }
+
   return (
     <div className={styles.app}>
       <header>NavigationSteps</header>

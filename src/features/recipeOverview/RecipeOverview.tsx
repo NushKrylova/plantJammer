@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect } from "react";
+import classNames from "classnames";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { useDispatch } from "react-redux";
 import {
   decrementIngredient,
   decrementPeople,
@@ -13,7 +13,6 @@ import {
 import { Stepper } from "../../app/components/stepper/Stepper";
 
 import styles from "./RecipeOverview.module.scss";
-import classNames from "classnames";
 
 export const RecipeOverview: FunctionComponent = () => {
   const recipeName = useAppSelector((state) => state.recipeOverview.name);

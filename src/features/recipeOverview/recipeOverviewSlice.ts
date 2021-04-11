@@ -77,9 +77,10 @@ const recipeOverviewSlice = createSlice({
   reducers: {
     incrementIngredient(state, action: PayloadAction<IngredientStep>) {
       const { name, step } = action.payload;
-      let ingredient = state.recipeIngredients.find(
+      const ingredient = state.recipeIngredients.find(
         (ingredient) => ingredient.name === name
       );
+
       if (ingredient) {
         ingredient.amount = ingredient.amount + step;
       }
@@ -87,9 +88,10 @@ const recipeOverviewSlice = createSlice({
 
     decrementIngredient(state, action: PayloadAction<IngredientStep>) {
       const { name, step } = action.payload;
-      let ingredient = state.recipeIngredients.find(
+      const ingredient = state.recipeIngredients.find(
         (ingredient) => ingredient.name === name
       );
+
       if (ingredient && ingredient.amount > 0) {
         ingredient.amount = ingredient.amount - step;
       }
@@ -125,7 +127,7 @@ export const formatUnits = (unit: Unit) => {
 
 export const toUpperCaseFirst = (text: string) =>
   text[0].toUpperCase() + text.substring(1);
-  
+
 export const {
   incrementIngredient,
   decrementIngredient,
