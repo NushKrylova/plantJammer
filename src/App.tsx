@@ -27,12 +27,15 @@ function App() {
       <header>NavigationSteps</header>
       <div className={styles.recipeOverviewContainer}>{getPage()}</div>
       <footer>
-        <ButtonNavigation
-          onClickBack={() => dispatch(previousPage())}
-          onClickNext={() => dispatch(nextPage())}
-          disabledBack={currentPageIndex === 0}
-          disabledNext={currentPageIndex === pagesTotal - 1}
-        ></ButtonNavigation>
+        <div className={styles.gradient}></div>
+        <div className={styles.buttonNavigationContainer}>
+          <ButtonNavigation
+            onClickBack={() => dispatch(previousPage())}
+            onClickNext={() => dispatch(nextPage())}
+            disabledBack={currentPageIndex === 0}
+            disabledNext={currentPageIndex === pagesTotal - 1}
+          ></ButtonNavigation>
+        </div>
       </footer>
     </div>
   );
