@@ -27,8 +27,8 @@
 .button {
   border: none;
   background-color: transparent;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 .button:disabled {
-  background-color: $gray;
+  background-color: $green;
 }

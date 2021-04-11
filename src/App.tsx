@@ -1,15 +1,21 @@
 import React from "react";
 import { RecipeOverview } from "./features/recipeOverview/RecipeOverview";
-import "./App.scss";
+import { ButtonNavigation } from "./app/components/buttonNavigation/ButtonNavigation";
+import styles from "./App.module.scss";
 
 function App() {
   return (
-    <div className="app">
+    <div className={styles.app}>
       <header>NavigationSteps</header>
-      <div className="recipeOverviewContainer">
+      <div className={styles.recipeOverviewContainer}>
         <RecipeOverview />
       </div>
-      <footer>NavigationButtons</footer>
+      <footer>
+        <ButtonNavigation
+          onClickBack={() => {}}
+          onClickNext={() => {}}
+        ></ButtonNavigation>
+      </footer>
     </div>
   );
 }

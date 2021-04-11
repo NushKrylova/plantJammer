@@ -1,0 +1,12 @@
+@import "../../../styles/variables.scss";
+
+.buttonNavigation {
+  min-width: 220px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 16px;
+  color: #000;
+}

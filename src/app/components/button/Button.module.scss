@@ -1,0 +1,18 @@
+@import "../../../styles/variables.scss";
+
+.button {
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+
+  border: none;
+  background-color: $darkGreen;
+  border-radius: 15px;
+  color: white;
+  padding: 8px;
+}
+
+.button:disabled {
+  background-color: $green;
+  color: $darkGreen;
+}
