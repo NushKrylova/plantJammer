@@ -8,7 +8,7 @@ import {
   formatUnits,
   incrementIngredient,
   incrementPeople,
-  toUpperCase,
+  toUpperCaseFirst,
 } from "./recipeOverviewSlice";
 import { Stepper } from "../../app/components/stepper/Stepper";
 import clock from "./clock.svg";
@@ -41,7 +41,7 @@ export const RecipeOverview: FunctionComponent = () => {
           <div className={styles.iconContainer}>
             <img className={styles.icon} src={item.icon} alt={item.name} />
           </div>
-          <div className={styles.label}>{toUpperCase(item.name)}</div>
+          <div className={styles.label}>{toUpperCaseFirst(item.name)}</div>
         </div>
       </td>
       <td>
@@ -61,7 +61,7 @@ export const RecipeOverview: FunctionComponent = () => {
 
   return (
     <div className={styles.recipeOverview}>
-      <h1>{recipeName}</h1>
+      <h1 className={styles.title}>{recipeName.toUpperCase()}</h1>
       <table>
         <thead>
           <tr>

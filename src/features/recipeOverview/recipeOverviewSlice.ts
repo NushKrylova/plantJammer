@@ -123,8 +123,9 @@ export const formatUnits = (unit: Unit) => {
   }
 };
 
-export const toUpperCase = (text: string) =>
+export const toUpperCaseFirst = (text: string) =>
   text[0].toUpperCase() + text.substring(1);
+  
 export const {
   incrementIngredient,
   decrementIngredient,
