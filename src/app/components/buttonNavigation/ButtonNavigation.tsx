@@ -17,11 +17,11 @@ export const ButtonNavigation: FunctionComponent<ButtonNavigationProps> = ({
   disabledNext,
 }) => (
   <div className={styles.buttonNavigation}>
-    <Button onClick={() => onClickBack} disabled={disabledBack}>
+    <Button onClick={onClickBack} disabled={disabledBack}>
       <i className="fas fa-arrow-left" />
       <div className={styles.label}>Back</div>
     </Button>
-    <Button onClick={() => onClickNext} disabled={disabledNext}>
+    <Button onClick={onClickNext} disabled={disabledNext}>
       <div className={styles.label}>Next</div>
       <i className="fas fa-arrow-right" />
     </Button>

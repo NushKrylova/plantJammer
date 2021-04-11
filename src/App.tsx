@@ -2,19 +2,34 @@ import React from "react";
 import { RecipeOverview } from "./features/recipeOverview/RecipeOverview";
 import { ButtonNavigation } from "./app/components/buttonNavigation/ButtonNavigation";
 import styles from "./App.module.scss";
+import { previousPage, nextPage } from "./features/navigation/navigationSlice";
+import { useAppDispatch, useAppSelector } from "./app/hooks";
+import { EmptyPage } from "./app/components/emptyPage/EmptyPage";
 
 function App() {
+  const currentPageIndex = useAppSelector(
+    (state) => state.navigation.currentPageIndex
+  );
+  const pagesTotal = useAppSelector((state) => state.navigation.pages.length);
+  const dispatch = useAppDispatch();
+
+  function getPage() {
+    if (currentPageIndex === 0) {
+      return <RecipeOverview />;
+    } else {
+      return <EmptyPage />;
+    }
+  }
   return (
     <div className={styles.app}>
       <header>NavigationSteps</header>
-      <div className={styles.recipeOverviewContainer}>
-        <RecipeOverview />
-      </div>
+      <div className={styles.recipeOverviewContainer}>{getPage()}</div>
       <footer>
         <ButtonNavigation
-          onClickBack={() => {}}
-          onClickNext={() => {}}
-          disabledBack={true}
+          onClickBack={() => dispatch(previousPage())}
+          onClickNext={() => dispatch(nextPage())}
+          disabledBack={currentPageIndex === 0}
+          disabledNext={currentPageIndex === pagesTotal - 1}
         ></ButtonNavigation>
       </footer>
     </div>

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect } from "react";
-import { useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { useDispatch } from "react-redux";
 import {
   decrementIngredient,
@@ -28,7 +28,7 @@ export const RecipeOverview: FunctionComponent = () => {
         )?.icon.url || "",
     }))
   );
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchIngredients());
