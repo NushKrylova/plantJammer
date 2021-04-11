@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
 import { RecipeOverview } from "./features/recipeOverview/RecipeOverview";
+import "./App.scss";
 
 function App() {
   return (

@@ -1,6 +1,8 @@
+@import "./styles/variables.scss";
+
 .app {
   height: 100%;
-  background-color: #f9f9f9;
+  background-color: $gray;
   display: flex;
   flex-direction: column;
 }

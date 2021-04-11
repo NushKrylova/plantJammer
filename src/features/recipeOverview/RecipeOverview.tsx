@@ -11,9 +11,9 @@ import {
   toUpperCase,
 } from "./recipeOverviewSlice";
 import { Stepper } from "../../app/components/stepper/Stepper";
+import clock from "./clock.svg";
 
-import styles from "./RecipeOverview.module.css";
-
+import styles from "./RecipeOverview.module.scss";
 
 export const RecipeOverview: FunctionComponent = () => {
   const recipeName = useAppSelector((state) => state.recipeOverview.name);
@@ -38,10 +38,10 @@ export const RecipeOverview: FunctionComponent = () => {
     <tr key={item.name}>
       <td>
         <div className={styles.ingredient}>
-          <div>
+          <div className={styles.iconContainer}>
             <img className={styles.icon} src={item.icon} alt={item.name} />
           </div>
-          <div>{toUpperCase(item.name)}</div>
+          <div className={styles.label}>{toUpperCase(item.name)}</div>
         </div>
       </td>
       <td>
@@ -73,8 +73,13 @@ export const RecipeOverview: FunctionComponent = () => {
                   onClickIncrement={() => dispatch(incrementPeople())}
                   onClickDecrement={() => dispatch(decrementPeople())}
                 />
-                <div>{time} min</div>
-                <div>Show in grams</div>
+                <div className={styles.time}>
+                  <div className={styles.iconContainer}>
+                    <img className={styles.icon} src={clock} alt="clock" />
+                  </div>
+                  <div className={styles.label}>{time} min</div>
+                </div>
+                <div className={styles.label}>Show in grams</div>
               </div>
             </th>
           </tr>

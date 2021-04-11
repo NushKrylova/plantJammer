@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
-import styles from "./Stepper.module.css";
 import minusIcon from "./minusIcon.svg";
 import plusIcon from "./plusIcon.svg";
+import styles from "./Stepper.module.scss";
 
 type StepperProps = {
   value: number;
