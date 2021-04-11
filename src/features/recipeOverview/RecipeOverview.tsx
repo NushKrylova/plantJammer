@@ -11,9 +11,9 @@ import {
   toUpperCaseFirst,
 } from "./recipeOverviewSlice";
 import { Stepper } from "../../app/components/stepper/Stepper";
-import clock from "./clock.svg";
 
 import styles from "./RecipeOverview.module.scss";
+import classNames from "classnames";
 
 export const RecipeOverview: FunctionComponent = () => {
   const recipeName = useAppSelector((state) => state.recipeOverview.name);
@@ -72,8 +72,8 @@ export const RecipeOverview: FunctionComponent = () => {
           />
         </div>
         <div className={styles.time}>
-          <div className={styles.iconContainer}>
-            <img className={styles.icon} src={clock} alt="clock" />
+          <div className={classNames(styles.iconContainer, styles.iconGreen)}>
+            <i className="far fa-clock" />
           </div>
           <div className={styles.label}>{time} min</div>
         </div>

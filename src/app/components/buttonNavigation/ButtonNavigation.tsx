@@ -1,7 +1,5 @@
 import { FunctionComponent } from "react";
 import { Button } from "../button/Button";
-import arrowLeft from "./arrowLeft.svg";
-import arrowRight from "./arrowRight.svg";
 
 import styles from "./ButtonNavigation.module.scss";
 
@@ -16,12 +14,12 @@ export const ButtonNavigation: FunctionComponent<ButtonNavigationProps> = ({
 }) => (
   <div className={styles.buttonNavigation}>
     <Button onClick={() => onClickBack}>
-      <img className={styles.icon} src={arrowLeft} alt="arrow left" />
-      <div>Back</div>
+    <i className="fas fa-arrow-left"/>
+      <div className={styles.label}>Back</div>
     </Button>
     <Button onClick={() => onClickNext}>
-      <div>Next</div>
-      <img className={styles.icon} src={arrowRight} alt="arrow left" />
+      <div className={styles.label}>Next</div>
+      <i className="fas fa-arrow-right"/>
     </Button>
   </div>
 );

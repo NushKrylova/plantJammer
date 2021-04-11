@@ -1,6 +1,4 @@
 import { FunctionComponent } from "react";
-import minusIcon from "./minusIcon.svg";
-import plusIcon from "./plusIcon.svg";
 import classNames from "classnames/bind";
 
 import styles from "./Stepper.module.scss";
@@ -25,14 +23,14 @@ export const Stepper: FunctionComponent<StepperProps> = ({
         onClick={onClickDecrement}
         disabled={value <= 0}
       >
-        <img className={styles.icon} src={minusIcon} alt="minus" />
+        <i className="fas fa-minus"/>
       </button>
       <div className={styles.text}>{valueFormat(value)}</div>
       <button
         className={classNames(styles.iconContainer, styles.button)}
         onClick={onClickIncrement}
       >
-        <img className={styles.icon} src={plusIcon} alt="plus" />
+        <i className="fas fa-plus" />
       </button>
     </div>
   </div>

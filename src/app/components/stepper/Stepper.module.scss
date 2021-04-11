@@ -16,10 +16,6 @@
   align-items: center;
 }
 
-.icon {
-  width: 16px;
-}
-
 .text {
   padding: 5px;
 }
@@ -28,7 +24,9 @@
   border: none;
   background-color: transparent;
   border-radius: 2px;
+  color: $darkGreen;
 }
+
 .button:disabled {
   background-color: $green;
 }
